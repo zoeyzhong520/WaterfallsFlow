@@ -12,6 +12,9 @@
 
 static NSString * CELLID = @"cellID";
 
+//随机颜色
+#define RandomColor [UIColor colorWithRed:(arc4random()%256)/255.0f green:(arc4random()%256)/255.0f blue:(arc4random()%256)/255.0f alpha:1]
+
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 ///collectionView
@@ -55,6 +58,7 @@ static NSString * CELLID = @"cellID";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELLID forIndexPath:indexPath];
+    cell.contentView.backgroundColor = RandomColor;
     return cell;
 }
 

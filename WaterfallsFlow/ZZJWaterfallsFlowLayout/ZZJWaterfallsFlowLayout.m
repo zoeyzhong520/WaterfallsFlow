@@ -47,6 +47,8 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    
     CGFloat collectionViewWidth = self.collectionView.frame.size.width;
     
     //self.sectionInset.left：左边距    self.sectionInset.right：右边距
@@ -75,7 +77,6 @@
     }
     
     //设置attributes的frame
-    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes new];
     attributes.frame = CGRectMake(itemX, itemY, itemWidth, itemHeight);
     
     //更新字典中的最短列的最大y值
